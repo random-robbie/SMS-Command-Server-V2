@@ -33,7 +33,11 @@ $authnumber = array ("0771245589,0745158745,0774547898");
 
 ```
 
-TO DO:
+Import commands.sql to your database 
+
+Easiest to be done via phpmyadmin
+
+TO DO
 ----
 
 Work a way to make it allow spaces for command names.
