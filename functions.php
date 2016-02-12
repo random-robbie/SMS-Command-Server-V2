@@ -35,7 +35,7 @@ else {
 
 }
 
-function execute_command ($serverip,$username,$password,$command)
+function execute_command ($serverip,$username,$password,$final_command)
 {
 $ssh = new SSH2($serverip);
 if (!$ssh->login($username, $password)) {
@@ -43,7 +43,7 @@ if (!$ssh->login($username, $password)) {
     exit();
 }
 
-$ssh->exec($command);
+$ssh->exec($final_command);
 
 }
 
