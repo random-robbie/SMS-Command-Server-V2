@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 3.4.11.1deb2
+-- version 4.2.12deb2+deb8u1
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 04, 2013 at 01:43 PM
--- Server version: 5.5.31
--- PHP Version: 5.4.4-14+deb7u5
+-- Generation Time: Feb 12, 2016 at 02:57 PM
+-- Server version: 5.5.44-0+deb8u1
+-- PHP Version: 5.6.14-0+deb8u1
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -27,22 +27,55 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `commands` (
-  `keyword` varchar(55) NOT NULL,
-  `command` varchar(55) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+`id` int(11) NOT NULL,
+  `command_name` text NOT NULL,
+  `command` text NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `commands`
+-- Table structure for table `servers`
 --
 
-INSERT INTO `commands` (`keyword`, `command`) VALUES
-('start apache', 'sudo /etc/init.d/apache2 start'),
-('stop apache', 'sudo /etc/init.d/apache2 stop'),
-('restart apache', 'sudo /etc/init.d/apache2 restart'),
-('update packages', 'sudo apt-get update'),
-('update dist', 'sudo apt-get dist-upgrade'),
-('restart ssh', 'sudo /etc/init.d/ssh restart');
+CREATE TABLE IF NOT EXISTS `servers` (
+`id` int(11) NOT NULL,
+  `server_name` text NOT NULL,
+  `username` text NOT NULL,
+  `password` text NOT NULL,
+  `serverip` text NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `commands`
+--
+ALTER TABLE `commands`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `servers`
+--
+ALTER TABLE `servers`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `commands`
+--
+ALTER TABLE `commands`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `servers`
+--
+ALTER TABLE `servers`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
