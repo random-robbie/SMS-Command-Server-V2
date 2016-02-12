@@ -24,7 +24,7 @@ if (!isset($_REQUEST['sms']))
 	$message = str_replace($smskey,"",$_REQUEST['message']);
 	$split =  explode(" ",$message);
 	$server = $split[1];
-	$command = $split[2];
+	$command_name = $split[2];
 	
 	// Convert 44 from to 0
 	$ptn = "/^44/";  
