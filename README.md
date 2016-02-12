@@ -37,9 +37,13 @@ Import commands.sql to your database
 
 Easiest to be done via phpmyadmin
 
+
+
 TO DO
 ----
-
+```
 Work a way to make it allow spaces for command names.
 Add History Page to see what commands have been sent or if they have been authorised or not.
+Add Page to add and remove servers and commands.
+```
 
