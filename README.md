@@ -16,6 +16,23 @@ Send a SMS with your key word i.e "HADS9 server1 reboot" and it will text back t
 
 That go to the webpage url and enter your authorised mobile number and it will let you execute the command with out displaying the server ip or details.
 
+Installation
+----
+
+Edit config.php with your database details and SMSPI hash.
+Put your mobile number or mobile numbers in to 
+
+```
+Single number
+
+$authnumber = array ("0771245589");
+
+Multiple Numbers
+
+$authnumber = array ("0771245589,0745158745,0774547898");
+
+```
+
 TO DO:
 ----
 
