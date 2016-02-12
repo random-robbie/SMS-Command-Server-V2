@@ -93,8 +93,7 @@ $final_command = $check_command['command'];
 
 $executed = execute_command ($serverip,$username,$password,$final_command);
 
-var_dump ($executed);
-exit();
+
 if ($executed == false)
 	{
 	if ($issms == "1")
