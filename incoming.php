@@ -35,6 +35,7 @@ if (!isset($_REQUEST['sms']))
 	$from = $_REQUEST['from'];
 	$server_name = $_REQUEST['server'];
 	$command_name = $_REQUEST['command'];
+	
 }
 
 //Check Authorisation for execution
@@ -73,7 +74,7 @@ if ($check_server == NULL)
 $server_name = $check_server['server_name'];
 $username = $check_server['username'];
 $password = $check_server['password'];
-$serverip = $check_server['server_ip'];
+$serverip = $check_server['serverip'];
 
 $check_command = check_command_name ($command_name,$dbh);
 if ($check_command == NULL)
@@ -88,8 +89,12 @@ if ($check_command == NULL)
 	}
 }	
 
-$final_command = check_command['command'];
-$executed = execute_command ($serverip,$username,$password,$command,$final_command);
+$final_command = $check_command['command'];
+
+$executed = execute_command ($serverip,$username,$password,$final_command);
+
+var_dump ($executed);
+exit();
 if ($executed == false)
 	{
 	if ($issms == "1")

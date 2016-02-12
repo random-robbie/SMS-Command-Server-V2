@@ -6,7 +6,7 @@
 
 require __DIR__ . '/vendor/autoload.php';
 use \Curl\Curl;
-use phpseclib\Net\SSH2;
+
 
 function sms ($sender,$message,$hash)
 {
@@ -37,13 +37,16 @@ else {
 
 function execute_command ($serverip,$username,$password,$final_command)
 {
-$ssh = new SSH2($serverip);
-if (!$ssh->login($username, $password)) {
-	return false;
-    exit();
-}
+
+$ssh = new \phpseclib\Net\SSH2($serverip);
+
+     if (!$ssh->login($username, $password)) {
+		 //Error Logging in.
+       return(false);
+    }
 
 $ssh->exec($final_command);
+return true;
 
 }
 
